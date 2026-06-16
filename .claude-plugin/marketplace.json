@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "marketplace",
   "owner": {
-    "name": "Kim Songhyun"
+    "name": "znagadeon"
   },
   "metadata": {
     "description": "Claude Code plugin marketplace",
