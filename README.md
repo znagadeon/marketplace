@@ -1,14 +1,6 @@
 # marketplace
 
-Claude Code plugin marketplace. Each plugin lives in `plugins/<name>/` as a `git subtree` of its upstream repo, and is listed in `.claude-plugin/marketplace.json`.
-
-## Layout
-
-```
-.claude-plugin/marketplace.json   # marketplace manifest (Claude Code reads this)
-plugins/<name>/                   # subtree of the plugin's upstream repo
-tools/                            # subtree helpers (TypeScript, run via bun)
-```
+Claude Code 플러그인 마켓플레이스. `plugins/*` 각 디렉토리가 독립된 플러그인이고, 루트 `.claude-plugin/marketplace.json`이 마니페스트.
 
 ## Setup
 
@@ -16,51 +8,18 @@ tools/                            # subtree helpers (TypeScript, run via bun)
 pnpm install
 ```
 
-`bun` is installed as a workspace devDependency — don't rely on a global one.
-
-## Add a plugin
+## 플러그인 관리
 
 ```sh
-pnpm plugin:add <name> <repo-url> [<ref>]
+pnpm plugin add <name> <description>   # 새 플러그인 스캐폴드
+pnpm plugin remove <name>              # 삭제
+pnpm plugin major|minor|patch <name>   # 버전업
+pnpm plugin list                       # 목록
 ```
 
-Then register it in `.claude-plugin/marketplace.json`:
+`plugin.json`과 `marketplace.json` 직접 편집 금지 — 반드시 위 스크립트로. 자세한 규칙은 `CLAUDE.md`.
 
-```json
-{
-  "name": "<name>",
-  "source": "./plugins/<name>",
-  "description": "..."
-}
-```
-
-## Pull upstream updates
-
-```sh
-pnpm plugin:pull <name> [<ref>]
-```
-
-## Push local edits back upstream
-
-```sh
-pnpm plugin:push <name> [<ref>]
-```
-
-## Bump a plugin to a new upstream ref
-
-```sh
-pnpm plugin:bump <name> <ref>   # e.g. v1.2.0
-```
-
-Pulls the ref into the subtree and syncs the plugin's `version` in `.claude-plugin/marketplace.json`.
-
-## List installed plugins
-
-```sh
-pnpm plugin:list
-```
-
-## Use this marketplace in Claude Code
+## Claude Code에서 사용
 
 ```
 /plugin marketplace add <git-url-or-local-path>
