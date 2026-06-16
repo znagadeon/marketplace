@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "marketplace",
+  "name": "personal",
   "owner": {
     "name": "znagadeon"
   },
