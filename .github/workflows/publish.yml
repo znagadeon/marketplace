@@ -1,0 +1,39 @@
+name: Publish
+
+on:
+  push:
+    branches: [develop]
+    paths:
+      - '.claude-plugin/marketplace.json'
+      - '.github/workflows/publish.yml'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tag new plugin versions
+        run: |
+          for plugin_dir in plugins/*/; do
+            plugin_json="${plugin_dir}.claude-plugin/plugin.json"
+            [ -f "$plugin_json" ] || continue
+
+            name=$(jq -r '.name' "$plugin_json")
+            version=$(jq -r '.version' "$plugin_json")
+            tag="${name}@${version}"
+
+            if git tag -l "$tag" | grep -q .; then
+              echo "::notice::Tag ${tag} already exists, skipping"
+              continue
+            fi
+
+            echo "::notice::Creating tag ${tag}"
+            git tag "$tag"
+            git push origin "$tag"
+          done
