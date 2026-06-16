@@ -1,0 +1,19 @@
+{
+  "name": "marketplace",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "plugin:add": "bun tools/plugin-add.ts",
+    "plugin:pull": "bun tools/plugin-pull.ts",
+    "plugin:push": "bun tools/plugin-push.ts",
+    "plugin:bump": "bun tools/plugin-bump.ts",
+    "plugin:list": "bun tools/plugin-list.ts",
+    "typecheck": "pnpm -r --if-present typecheck"
+  },
+  "devDependencies": {
+    "bun": "^1.1.0",
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  }
+}
