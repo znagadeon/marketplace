@@ -9,6 +9,8 @@ description: AI 지식베이스(KB) CLI `pantry`를 부르는 얇은 래퍼. 작
 **명시적 호출에만** 발동한다 — "KB에 남겨" / "KB에서 찾아봐" 류. 무의식 자동발동은 없다. 사용자가 부르지 않았으면 atom을 만들지도 검색하지도 않는다.
 
 ## CLI 한눈에
+`pantry`가 PATH에 깔려 있다고 가정한다(전역 설치). `pantry`가 안 잡히면 설치 안 된 것 — pantry repo에서 `bun run install:bin`(단일 바이너리를 `~/.local/bin`에 설치)을 안내하고, 그 전엔 capture/recall을 시도하지 마라.
+
 저장소 경로(loc)는 `pantry config set loc <dir>`로 한 번 박아두면 이후 생략 가능. 안 박혔으면 매 호출에 `--loc <dir>`.
 
 ```
