@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Claude Code plugin marketplace",
-    "version": "0.2.1"
+    "version": "0.3.1"
   },
   "plugins": [
     {
@@ -28,6 +28,16 @@
         "ref": "memopad@1.0.0"
       },
       "description": "메모패드 — 작업 중 떠오른 생각을 제로 컨텍스트로 지정 위치에 적어두고 바로 복귀"
+    },
+    {
+      "name": "dailywatch",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/znagadeon/marketplace",
+        "path": "plugins/dailywatch",
+        "ref": "dailywatch@1.0.0"
+      },
+      "description": "데일리워치 — 어떤 일이 완료될 때까지 매일 첫 세션에 Claude가 직접 확인해 보고"
     }
   ]
 }

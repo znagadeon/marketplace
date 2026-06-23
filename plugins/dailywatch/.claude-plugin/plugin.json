@@ -1,0 +1,5 @@
+{
+  "name": "dailywatch",
+  "version": "1.0.0",
+  "description": "데일리워치 — 어떤 일이 완료될 때까지 매일 첫 세션에 Claude가 직접 확인해 보고"
+}

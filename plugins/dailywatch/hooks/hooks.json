@@ -1,0 +1,16 @@
+{
+  "description": "dailywatch — 매일 첫 세션에서 미완료 watch 항목을 점검하도록 컨텍스트를 주입",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}
