@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Claude Code plugin marketplace",
-    "version": "0.3.2"
+    "version": "0.4.0"
   },
   "plugins": [
     {
@@ -38,6 +38,16 @@
         "ref": "dailywatch@1.1.0"
       },
       "description": "데일리워치 — 어떤 일이 완료될 때까지 매일 첫 세션에 Claude가 직접 확인해 보고"
+    },
+    {
+      "name": "fresheyes",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/znagadeon/marketplace",
+        "path": "plugins/fresheyes",
+        "ref": "fresheyes@0.1.0"
+      },
+      "description": "격리 리뷰 — 방금 한 작업을 대화 맥락에 오염되지 않은 깨끗한 서브에이전트로 리뷰"
     }
   ]
 }
