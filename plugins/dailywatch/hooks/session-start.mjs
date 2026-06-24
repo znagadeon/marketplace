@@ -35,7 +35,8 @@ try {
 }
 
 const watches = Array.isArray(config?.watches) ? config.watches : [];
-const pending = watches.filter((w) => w && w.done !== true);
+// enabled가 명시적으로 false인 것만 제외한다 — 필드가 없는 항목은 활성으로 본다.
+const pending = watches.filter((w) => w && w.enabled !== false);
 
 if (pending.length === 0) silent();
 
