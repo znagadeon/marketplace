@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Claude Code plugin marketplace",
-    "version": "0.5.4"
+    "version": "0.6.0"
   },
   "plugins": [
     {
@@ -58,6 +58,16 @@
         "ref": "pantry@0.1.3"
       },
       "description": "Pantry KB — AI 지식베이스 CLI 래퍼. capture는 query→write 강제, recall은 다중 grep, 자기완결 ingredient 규약으로 pantry CLI를 호출"
+    },
+    {
+      "name": "create-project",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/znagadeon/marketplace",
+        "path": "plugins/create-project",
+        "ref": "create-project@0.1.0"
+      },
+      "description": "/draft로 응축한 프롬프트를 받아 지정 위치에 프로젝트 폴더를 만들고 PROMPT.md 기록·git init·언어별 스캐폴딩까지 수행"
     }
   ]
 }

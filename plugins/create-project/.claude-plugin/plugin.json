@@ -1,0 +1,5 @@
+{
+  "name": "create-project",
+  "version": "0.1.0",
+  "description": "/draft로 응축한 프롬프트를 받아 지정 위치에 프로젝트 폴더를 만들고 PROMPT.md 기록·git init·언어별 스캐폴딩까지 수행"
+}
