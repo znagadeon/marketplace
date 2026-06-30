@@ -22,13 +22,14 @@ curl -fsSL https://raw.githubusercontent.com/znagadeon/pantry/develop/scripts/in
 ```
 pantry create "<본문 md>" --session <name>   # ingredient 기록. id를 stdout으로 뱉음
 pantry query [PATTERN...] [--session <n>] [--since <d>] [--until <d>]
-             [--include-deprecated] [--page <n>] [--size <n>] [--sort lexical|recent]
+             [--include-deprecated] [--hash] [--page <n>] [--size <n>] [--sort lexical|recent]
 pantry read <id>                              # ingredient 통째 읽기
 pantry deprecate <id>                         # "더는 신뢰 마라" verdict 스탬프(본문 불변)
 pantry remove <id>                            # 물리 삭제
 ```
 - `query`는 PATTERN 없으면 **핸들**(session+id+첫 줄), 있으면 **스니펫**을 뱉는다. 다중 PATTERN = AND. 출력 머리의 `matched N, page x/y, next:`로 절단 여부를 읽어라.
 - `read`는 query가 준 **id**만 받는다(path·`.md` 아님).
+- `--hash`는 핸들에 본문 content-address(SHA-256)를 붙인다 — **위성 도구**(의미 검색 등)가 KB를 스냅샷해 자기 캐시를 무효화할 때만 쓴다. capture/recall에는 안 쓴다(무시해라).
 
 ## capture = query→write (중복 query 필수)
 "이거 KB에 남겨"를 받으면 **곧장 create하지 마라.** 먼저 검색해 기존 ingredient과 충돌·중복을 확인한다:
